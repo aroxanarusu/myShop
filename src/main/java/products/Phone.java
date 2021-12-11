@@ -6,8 +6,8 @@ public class Phone extends ProdusElectronic{
     private boolean hasTouch;
 
 
-    public Phone(long id, double price, String name, int numbOfSims, boolean hasTouch, int voltaj) {
-        super(id, price, name, voltaj);
+    public Phone(long id, double price, String name, int numbOfSims, boolean hasTouch, int voltage) {
+        super(id, price, name, voltage);
         this.numbOfSims=numbOfSims;
         this.hasTouch=hasTouch;
     }
@@ -29,10 +29,17 @@ public class Phone extends ProdusElectronic{
     }
 
     @Override
+    public String prettyPrint() {
+        return super.prettyPrint() +
+                "\nNumber of sims: " + this.numbOfSims +
+                "\nHas touch?: " + this.hasTouch;
+    }
+
+    @Override
     public String toString() {
         return "Phone{" +
-                "numbOfSim" + numbOfSims +
-                ", hasTouchs==" + hasTouch +
-                '}'+super.toString();
+                "numbOfSims=" + numbOfSims +
+                ", hasTouch=" + hasTouch +
+                "} " + super.toString();
     }
 }

@@ -2,25 +2,31 @@ package products;
 
 public abstract class ProdusElectronic extends Produs {
 
-    private int voltaj;
+    private int voltage;
 
-    public ProdusElectronic(long id, double price, String name, int voltaj) {
+    public ProdusElectronic(long id, double price, String name, int voltage) {
         super(id, price, name);
-        this.voltaj=voltaj;
+        this.voltage = voltage;
     }
 
-    public int getVoltaj() {
-        return voltaj;
+    public int getVoltage() {
+        return voltage;
     }
 
-    public void setVoltaj(int voltaj) {
-        this.voltaj = voltaj;
+    public void setVoltage(int voltage) {
+        this.voltage = voltage;
     }
 
     @Override
     public String toString() {
         return "ProdusElectronic{" +
-                "voltaj=" + voltaj +
-                '}'+ super.toString();
+                "voltage=" + voltage +
+                "} " + super.toString();
+    }
+
+    @Override
+    public String prettyPrint() {
+        return super.prettyPrint() +
+                "\nVoltage: " + this.voltage;
     }
 }

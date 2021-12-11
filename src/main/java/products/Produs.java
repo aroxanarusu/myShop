@@ -14,7 +14,6 @@ public abstract class Produs implements Serializable {
         this.name = name;
     }
 
-
     public long getId() {
         return id;
     }
@@ -41,10 +40,16 @@ public abstract class Produs implements Serializable {
 
     @Override
     public String toString() {
-        return "com.altex.products.Produs{" +
+        return "Produs{" +
                 "id=" + id +
                 ", price=" + price +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    public String prettyPrint() {
+        return "ID: " + this.id +
+                "\nPrice: " + this.price +
+                "\nProduct name: " + this.name;
     }
 }

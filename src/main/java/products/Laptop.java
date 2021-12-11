@@ -1,15 +1,15 @@
 package products;
 
-public class Laptop extends ProdusElectronic{
+public class Laptop extends ProdusElectronic {
 
     private boolean hasGraphicCard;
     private int numbOfPorts;
 
 
-    public Laptop(long id, double price, String name, boolean hasGraphicCard, int numbOfPorts, int voltaj) {
-        super(id, price, name, voltaj);
-        this.hasGraphicCard=hasGraphicCard;
-        this.numbOfPorts=numbOfPorts;
+    public Laptop(long id, double price, String name, boolean hasGraphicCard, int numbOfPorts, int voltage) {
+        super(id, price, name, voltage);
+        this.hasGraphicCard = hasGraphicCard;
+        this.numbOfPorts = numbOfPorts;
     }
 
     public boolean isHasGraphicCard() {
@@ -33,6 +33,14 @@ public class Laptop extends ProdusElectronic{
         return "Laptop{" +
                 "hasGraphicCard=" + hasGraphicCard +
                 ", numbOfPorts=" + numbOfPorts +
-                '}'+ super.toString();
+                "} " + super.toString();
+    }
+
+    @Override
+    public String prettyPrint() {
+        return "Laptop\n" +
+                super.prettyPrint()+
+                "\nAre placa grafica? " + hasGraphicCard +
+                "\nNumarul de porturi: " + numbOfPorts;
     }
 }
