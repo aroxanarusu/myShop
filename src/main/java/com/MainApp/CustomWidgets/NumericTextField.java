@@ -1,4 +1,4 @@
-package utility;
+package com.MainApp.CustomWidgets;
 
 import javafx.scene.control.TextField;
 

@@ -26,7 +26,9 @@ public class Shop {
     }
 
     public void addProd(Produs produs) {
-        produse.add(produs);
+        if (!isIdInShop(produs.getId())) {
+            produse.add(produs);
+        }else System.out.println("Try again");
     }
 
     public void printProducts() {
@@ -54,6 +56,18 @@ public class Shop {
         if (produse.indexOf(getProductById(id)) != -1) {
             produse.remove(produse.indexOf(getProductById(id)));
         }
+    }
+
+    public boolean isIdInShop(long id) {
+
+        List<Produs> produs = getProduse();
+        for (int i = 0; i < produs.size(); i++) {
+            if (produs.get(i) != null)
+                if (produs.get(i).getId() == id) {
+                    return true;
+                }
+        }
+        return false;
     }
 
     public Produs getProductById(long id) {
